@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 관련 스타일</title>
+    <style>
+        #c {
+            color: aqua;
+            color: #ffc0cb;
+            color: rgb(128, 255, 0);
+            /* rgb컬러 범위는 0 ~ 255 */
+            color: rgba(128, 255, 0, 0.65);
+            color: hsl(200, 48%, 40%);
+            /* h : 색상값(0~360), s : 채고 %, l : 명도 % */
+            color: hsla(219, 79%, 66%, 0.8);
+            /* a : 투명도 */
+        }
+
+        #td1 {
+            text-decoration: underline;
+        }
+
+        #td2 {
+            text-decoration: line-through;
+        }
+
+        #td3 {
+            text-decoration: overline;
+        }
+
+        #td4 {
+            text-decoration: none;
+            color: black;
+        }
+
+        #tt1 {
+            text-transform: uppercase;
+        }
+
+        #tt2 {
+            text-transform: lowercase;
+        }
+
+        #tt3 {
+            text-transform: capitalize;
+        }
+
+        #ta1 {
+            text-align: justify;
+        }
+
+        #ta2 {
+            text-align: right;
+        }
+
+        #ta3 {
+            text-align: center;
+        }
+
+        .shadow {
+            font-size: 50px;
+            font-weight: 900;
+        }
+
+        #ts1 {
+            color: orangered;
+            text-shadow: 5px 5px 5px black;
+        }
+
+        #ts2 {
+            color: white;
+            text-shadow: 0px 0px 10px black;
+        }
+
+        #ts3 {
+            text-shadow: 0px 0px 4px gray, 0px -5px 4px yellow,
+                0px -15px 14px orangered, 0px -22px 19px red
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>텍스트 관련 스타일(text~)</h1>
+
+    <h3>color : 텍스트의 색상을 지정</h3>
+
+    <pre id="c">
+        선택자 {
+            color : 색상명/ 16진수 / rbg, rgba, hsl..
+        }
+    </pre>
+
+    <hr>
+
+    <h3>text-decoreation : 텍스트에 줄을 긋거나 줄을 없앨때 사용</h3>
+
+    <pre>
+        선택자 {
+            text-decoration : none/underline/overline/line-through;
+        }
+    </pre>
+
+    <!-- ul>li#td$*3 -->
+    <ul>
+        <li id="td1">underline : 텍스트 영역 아래에 줄 긋기</li>
+        <li id="td2">line-through : 텍스트 영역 중간에 줄 긋기</li>
+        <li id="td3">overline : 텍스트영역 위에 줄 긋기</li>
+    </ul>
+
+    <a href="https://www.naver.com" id="td4">네이버</a>
+
+    <hr>
+
+    <h3>text-transform : 영문 텍스트의 대소문자 변환 시 사용</h3>
+
+    <pre>
+        선택자 {
+            text-transform:uppercase/lowercase/capitalize;
+        }
+    </pre>
+
+    <hr>
+
+    <!-- ul>li#tt$*3 -->
+    <ul>
+        <li id="tt1">uppercase : 모든 영문자를 대문자로</li>
+        <li id="tt2">lowercase : 모든 영문자를 소문자로</li>
+        <li id="tt3">capitalize : 영문자의 첫글자만 대문자로</li>
+    </ul>
+
+    <hr>
+
+    <h3>text-align : 텍스트를 정렬할 때 사용</h3>
+
+    <pre>
+        선택자 {
+            text-align : left(기본값) / justify / right / center;
+        }
+    </pre>
+
+    <h4>양쪽정렬</h4>
+
+    <p id="ta1">
+        이는 맺어, 피에 옷을 실로 할지니, 보이는 위하여서, 그들의 것이다. 끓는 튼튼하며, 무엇이 철환하였는가? 얼마나 못하다 청춘의 운다. 주는 붙잡아 때까지 못하다 만천하의 이것이다. 가지에 발휘하기
+        두기 남는 없으면, 뜨거운지라, 뿐이다. 이것이야말로 이상의 끓는 과실이 충분히 방황하였으며, 수 사람은 것이다. 꽃이 바로 가는 구하지 봄바람이다. 그와 있는 사랑의 약동하다. 그들은 이것을 보는
+        이상의 귀는 못할 아름다우냐? 우리 옷을 그들에게 그들은 힘있다. 가치를 쓸쓸한 가진 물방아 심장은 공자는 위하여 보라.
+
+        크고 그들의 풀밭에 때에, 있으랴? 구하지 방황하여도, 굳세게 철환하였는가? 커다란 피는 품으며, 그리하였는가? 열매를 소리다.이것은 사라지지 그러므로 오직 심장은 바로 쓸쓸하랴? 실로 창공에 그러므로
+        놀이 하는 현저하게 이것을 아름다우냐? 구하지 못할 만물은 소금이라 피가 아름다우냐? 피에 인간이 전인 무엇을 넣는 품으며, 듣는다. 소담스러운 얼음 길지 위하여 같은 천자만홍이 찾아 불러
+        철환하였는가? 얼마나 날카로우나 영락과 사랑의 그들은 사라지지 하여도 새가 못하다 봄바람이다. 황금시대의 우리 무엇을 돋고, 능히 따뜻한 이 전인 하여도 뿐이다. 이 풀밭에 피어나기 무엇을 영락과 곳이
+        사막이다.
+
+        않는 열락의 갑 이상의 위하여, 있는가? 우리 얼음이 가슴에 불러 위하여서, 있는가? 꽃이 열락의 없는 천고에 품고 온갖 구하지 석가는 그들을 위하여서. 천고에 때까지 이것을 전인 청춘에서만
+        봄바람이다. 찬미를 온갖 유소년에게서 위하여, 예가 붙잡아 있음으로써 인간이 피다. 그들을 기쁘며, 있는 인생에 가진 풍부하게 천하를 피어나는 얼마나 있는가? 않는 쓸쓸한 뭇 풀이 봄바람이다. 사는가
+        청춘 품으며, 행복스럽고 관현악이며, 그들의 봄바람이다. 남는 위하여서, 청춘을 피에 쓸쓸하랴? 생명을 모래뿐일 돋고, 것이다. 열락의 구하지 목숨을 청춘은 많이 구하기 영락과 말이다.
+    </p>
+
+    <h4>오른쪽정렬</h4>
+    <p id="ta2">
+        커다란 위하여, 청춘 우리의 길지 광야에서 끓는 청춘의 가장 말이다. 주며, 산야에 피고, 우리 작고 듣는다. 심장은 더운지라 위하여, 것이다. 하는 심장은 창공에 인류의 말이다. 소담스러운 그와
+        인간은 낙원을 굳세게 곧 있다. 그들의 그들의 때에, 착목한는 귀는 설레는 있는가? 설레는 방황하여도, 사람은 열락의 것이다. 하는 맺어, 불러 같으며, 뿐이다. 이 얼음 품으며, 그들의 만천하의
+        같이, 풍부하게 꾸며 위하여서 것이다. 군영과 되려니와, 이상 같이 하였으며, 사막이다. 유소년에게서 그림자는 풍부하게 것이 커다란 있는가?
+
+        곳이 지혜는 인도하겠다는 낙원을 돋고, 위하여서. 찬미를 않는 가치를 것이다. 얼마나 더운지라 청춘에서만 그러므로 미인을 청춘의 그들을 아름답고 것이다. 창공에 몸이 피고 속잎나고, 기쁘며, 따뜻한
+        말이다. 피어나기 끝까지 동산에는 만천하의 천고에 새 바이며, 노래하며 사는가 봄바람이다. 있는 아니더면, 하는 공자는 뜨거운지라, 살았으며, 따뜻한 듣기만 이것이다. 이상의 모래뿐일 끓는 목숨이
+        부패뿐이다. 구할 하는 그들의 것이다. 청춘의 피가 그들의 대중을 인도하겠다는 꽃이 이것은 뼈 뿐이다. 그러므로 길을 지혜는 대고, 어디 설레는 것이다. 위하여 찾아 그들은 미인을 우리는 가슴에 수
+        말이다.
+    </p>
+    <h4>가운데정렬</h4>
+    <p id="ta3">
+        인간의 수 있으며, 불어 미묘한 인생에 없으면 용기가 듣는다. 과실이 귀는 전인 현저하게 위하여, 못할 것이다. 힘차게 곳이 예수는 공자는 말이다. 그들은 천고에 소담스러운 청춘은 미묘한 타오르고 귀는
+        약동하다. 얼마나 보이는 뛰노는 사랑의 생의 위하여 피어나는 보내는 약동하다. 무한한 없으면 그러므로 운다. 시들어 바로 튼튼하며, 피가 듣는다. 이상의 그러므로 있음으로써 이상이 가치를 대중을
+        봄바람이다. 따뜻한 피고, 낙원을 모래뿐일 그들은 방황하였으며, 크고 위하여 운다. 목숨을 석가는 얼마나 끓는 우리 더운지라 사라지지 이것이다.
+    </p>
+
+    <hr>
+
+    <h3>text-shadow : 텍스트에 그림자효과를 줄 때 사용</h3>
+
+    <pre>
+        선택자 {
+            text-shadow : 가로거리(x) 세로거리(y) 번짐정도 색상;
+        }
+
+        - 번짐정도와 색상은 생략 가능
+        - 가로거리와 세로거리가 양수 일 경우 오른쪽 아래에 그림자 생성
+        - 가로거리와 세로거리가 음수 일 경우 왼쪽 위에 그림자 생성
+        - 번짐정도가 0 일 경우 글자 색이 진하다.
+        - 색상은 기본값이 글자색과 같다.
+    </pre>
+
+    <div>
+        <!-- span.shadow#ts$*3 -->
+        <span class="shadow" id="ts1">HTML</span> <br><br><br>
+        <span class="shadow" id="ts2">HTML</span> <br><br><br>
+        <span class="shadow" id="ts3">HTML</span>
+    </div>
+    
+</body>
+
+</html>
