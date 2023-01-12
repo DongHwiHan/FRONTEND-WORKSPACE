@@ -1,0 +1,191 @@
+html {
+    /* 스크롤 영역단위 이동 및 감추기 */
+    -ms-overflow-style: none;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    /* 스크롤 감추기 */
+    display: none;
+}
+
+#header,
+#b2,
+#b3,
+#footer_menu {
+    /* 스크롤 영역단위 이동 */
+    scroll-snap-align: center;
+}
+
+div {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.wrap {
+    width: 100%;
+    height: 1000px;
+}
+
+.wrap>div {
+    width: 100%;
+}
+
+/* header 부분 시작 */
+
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 101px;
+    padding: 32px;
+    border-bottom: 1px solid #000;
+    background-color: #fff;
+    z-index: 1;
+}
+
+/* header 부분 끝 */
+
+/* menu 부분 시작 */
+
+#menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    float: left;
+    width: 380px;
+    height: 100%;
+    padding: 103px 30px 50px;
+    border-right: 1px solid #000;
+}
+
+#screen {
+    width: 78%;
+    float: right;
+    position: relative;
+}
+
+#menu a,
+#menu ul {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    list-style: none;
+    padding-left: 0px;
+}
+
+#menu>ul>li {
+    margin: 10px;
+}
+
+/* menu 부분 끝 */
+
+/* fix_menu 부분 시작 */
+
+#fix_menu {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 93%;
+    padding: 20px 30px 57px;
+}
+
+#fix_menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 23px;
+}
+
+#fix_menu sup {
+    font-size: 12px;
+}
+
+/* fix_menu 부분 끝 */
+
+/* banner 부분 시작 */
+
+#banner {
+    margin-top: 72px;
+}
+
+/* banner 부분 끝 */
+
+/* footer_menu 부분 시작 */
+
+#footer_menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+#footer_menu ul,
+#footer_menu li {
+    color: black;
+    font-size: 1px;
+    list-style-type: none;
+    float: left;
+    margin-left: 20px;
+    margin-top: 0;
+    padding: 0 40px 0 22px;
+}
+
+#footer_menu li::after {
+    /* footer_menu 커서올라가면 밑줄그어지기 */
+    content: "";
+    display: block;
+    border-bottom: 3px solid black;
+    transition: all 250ms ease-out;
+    left: 50%;
+    width: 0;
+}
+
+#footer_menu li:hover::after {
+    /* footer_menu 커서올라가면 밑줄그어지기 */
+    transition: all 250ms ease-out;
+    left: 0%;
+    width: 100%;
+}
+
+#footer_menu p {
+    margin-bottom: 0;
+    margin-left: 80px;
+    font-size: 13px;
+}
+
+/* footer_menu 부분 끝 */
+
+/* footer_bar 부분 시작 */
+
+#footer_bar {
+    float: left;
+    display: flex;
+}
+
+#fb1 {
+    width: 400px;
+    padding: 100px 20px 0;
+    font-size: 11px;
+}
+
+#fb2 {
+    width: 100%;
+    padding: 100px 90px 0 180px;
+    font-size: 11px;
+
+}
+
+#fb2 a {
+    text-decoration: none;
+    color: black;
+}
+
+#fb3 {
+    width: 400px;
+    padding: 100px 10px 0 90px;
+    font-size: 11px;
+}
+
+/* footer_bar 부분 끝 */
