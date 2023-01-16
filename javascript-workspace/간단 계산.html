@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단계산</title>
+
+</head>
+
+<body>
+    <h1>Practice2</h1>
+
+    <input type="text" id="a" value="3" size="8">
+    <select id="operator">
+        <option value="plus">+</option>
+        <option value="minus">-</option>
+        <option value="multiply" selected>*</option>
+        <option value="divide">/</option>
+        <option value="나머지">%</option>
+    </select>
+    <input type="text" id="b" value="4" size="8">
+    <input type="button" id="operation" value="=">
+    <input type="input" id="result" readonly size="8">
+
+    <script>
+        document.getElementById("operation").addEventListener("click", calc);
+
+        function calc() {
+            a = Number(document.getElementById("a").value);
+            b = Number(document.getElementById("b").value);
+
+            opr = document.getElementById("operator").value;
+
+            if (opr == "plus") text = a + b;
+            else if (opr == "minus") text = a - b;
+            else if (opr == "multiply") text = a * b;
+            else if (opr == "divide") text = a / b;
+            else text = a % b;
+            document.getElementById("result").value = text;
+
+            if (!isFinite(text)) { //true
+                document.getElementById("result").style.backgroundColor = "red";
+                document.getElementById("result").value = "연산불가";
+                document.getElementById("result").style.color = "white";
+            }
+            if (isFinite(text)) { //false
+                document.getElementById("result").style = "";
+                document.getElementById("result").value = text;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카테고리 선택</title>
+    <style>
+        #area1 {
+            border: 1px solid red;
+            width: 700px;
+            height: 120px;
+        }
+    </style>
+</head>
+
+<script>
+    window.onload = function () {
+        var all = document.getElementsByTagName("input");
+
+        var categorys = document.getElementsByName("chk");
+
+        var ci = '';
+
+        document.getElementById("selectA").onclick = function () {
+
+            for (var i = 0; i < categorys.length; i++) {
+                if (categorys[i].checked) {
+                    ci += categorys[i].value + " ";
+                }
+            }
+            document.getElementById("area1").innerHTML = ci;
+        }
+
+        document.getElementById("chkAll").onclick = function () {
+            if (chkAll.checked) {
+                for (var i = 0; i < categorys.length; i++) {
+                    categorys[i].checked = true;
+                }
+            } else {
+                for (var i = 0; i < categorys.length; i++) {
+                    categorys[i].checked = false;
+                }
+            }
+        }
+
+        for (var i = 0; i < categorys.length; i++) {
+            if (categorys[i].checked == false) {
+                categorys[i].onclick = a;
+            }
+        }
+
+        function a() {
+            for (var i = 0; i < categorys.length; i++) {
+                if (categorys[i].checked == false) {
+                    chkAll.checked = false;
+                }
+            }
+        }
+    }       
+</script>
+
+<body>
+    <h1>Practice1</h1>
+    <form action="">
+        <fieldset>
+            <legend>취미</legend>
+            <input type='checkbox' id="chkAll" name="select">전체선택
+            <input type="checkbox" name="chk" value="종합">종합
+            <input type="checkbox" name="chk" value="소설">소설
+            <input type="checkbox" name="chk" value="시/에세이">시/에세이
+            <input type="checkbox" name="chk" value="경제/경영">경제/경영
+            <input type="checkbox" name="chk" value="자기계발">자기계발
+            <input type="checkbox" name="chk" value="아동">아동<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="chk" value="여행">여행
+            <input type="checkbox" name="chk" value="과학">과학
+            <input type="checkbox" name="chk" value="역사/문화">역사/문화
+            <input type="checkbox" name="chk" value="외국어">외국어
+            &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="chk" value="컴퓨터">컴퓨터
+            &nbsp;&nbsp;
+            <input type="checkbox" name="chk" value="만화">만화
+        </fieldset>
+        <br>
+    </form>
+    <button type="button" id="selectA">카테고리 선택</button>
+    <div id="area1"></div>
+
+
+</body>
+
+</html>
