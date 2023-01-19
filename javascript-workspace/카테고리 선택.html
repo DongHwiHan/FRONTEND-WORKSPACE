@@ -5,91 +5,139 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카테고리 선택</title>
+    <title>책 카테고리 선택</title>
     <style>
-        #area1 {
-            border: 1px solid red;
-            width: 700px;
-            height: 120px;
+        .check-btn {
+            color: #0000ff;
+            background-color: #0000ff;
+            padding: 0;
         }
+
+        /* table>tr>td>#category1 {} */
     </style>
 </head>
 
-<script>
-    window.onload = function () {
-        var all = document.getElementsByTagName("input");
-
-        var categorys = document.getElementsByName("chk");
-
-        var ci = '';
-
-        document.getElementById("selectA").onclick = function () {
-
-            for (var i = 0; i < categorys.length; i++) {
-                if (categorys[i].checked) {
-                    ci += categorys[i].value + " ";
-                }
-            }
-            document.getElementById("area1").innerHTML = ci;
-        }
-
-        document.getElementById("chkAll").onclick = function () {
-            if (chkAll.checked) {
-                for (var i = 0; i < categorys.length; i++) {
-                    categorys[i].checked = true;
-                }
-            } else {
-                for (var i = 0; i < categorys.length; i++) {
-                    categorys[i].checked = false;
-                }
-            }
-        }
-
-        for (var i = 0; i < categorys.length; i++) {
-            if (categorys[i].checked == false) {
-                categorys[i].onclick = a;
-            }
-        }
-
-        function a() {
-            for (var i = 0; i < categorys.length; i++) {
-                if (categorys[i].checked == false) {
-                    chkAll.checked = false;
-                }
-            }
-        }
-    }       
-</script>
-
 <body>
     <h1>Practice1</h1>
-    <form action="">
-        <fieldset>
-            <legend>취미</legend>
-            <input type='checkbox' id="chkAll" name="select">전체선택
-            <input type="checkbox" name="chk" value="종합">종합
-            <input type="checkbox" name="chk" value="소설">소설
-            <input type="checkbox" name="chk" value="시/에세이">시/에세이
-            <input type="checkbox" name="chk" value="경제/경영">경제/경영
-            <input type="checkbox" name="chk" value="자기계발">자기계발
-            <input type="checkbox" name="chk" value="아동">아동<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="checkbox" name="chk" value="여행">여행
-            <input type="checkbox" name="chk" value="과학">과학
-            <input type="checkbox" name="chk" value="역사/문화">역사/문화
-            <input type="checkbox" name="chk" value="외국어">외국어
-            &nbsp;&nbsp;&nbsp;
-            <input type="checkbox" name="chk" value="컴퓨터">컴퓨터
-            &nbsp;&nbsp;
-            <input type="checkbox" name="chk" value="만화">만화
-        </fieldset>
-        <br>
-    </form>
-    <button type="button" id="selectA">카테고리 선택</button>
-    <div id="area1"></div>
 
+    <fieldset>
+        <legend>취미</legend>
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" id="selectAll" class="check-btn" onclick="selectAll();" />
+                    <label for="selectAll">전체 선택</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category1" value="종합" />
+                    <label for="category1">종합</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category2" value="소설" />
+                    <label for="category2">소설</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category3" value="시/에세이" />
+                    <label for="category3">시/에세이</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category4" value="경제/경영" />
+                    <label for="category4">경제/경영</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category5" value="자기계발" />
+                    <label for="category5">자기계발</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category6" value="아동" />
+                    <label for="category6">아동</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" name="category" id="category7" value="여행" />
+                    <label for="category7">여행</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category8" value="과학" />
+                    <label for="category8">과학</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category9" value="역사/문화" />
+                    <label for="category9">역사/문화</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category10" value="외국어" />
+                    <label for="category10">외국어</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category11" value="컴퓨터" />
+                    <label for="category11">컴퓨터</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="category" id="category12" value="만화" />
+                    <label for="category12">만화</label>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
 
+    <br><br>
+    <button onclick="printCategory()">카테고리 선택</button><br>
+    <div id="area" class="area area-js" style="border : 1px solid red; width:100%; height:300px;">
+    </div>
+    <script>
+        //3번기능
+        let classes = document.querySelectorAll('.area-js');
+        classes.forEach(function (item) {
+            item.onclick = function () {
+                alert('1234');
+            }
+        });
+
+        let categorys = document.getElementsByName("category");
+        for (let i = 0; i < categorys.length; i++) {
+            categorys[i].onclick = function () {
+                let checkedListLength = document.querySelectorAll("input[name=category]:checked").length;
+                // 선택된 체크박스 길이 == 전체 체크박스 길이
+                if (checkedListLength == categorys.length) {
+                    document.getElementById("selectAll").checked = true;
+                } else {
+                    document.getElementById("selectAll").checked = false;
+                }
+            }
+        }
+
+        // 1번 기능
+        function printCategory() {
+            // 내가 선택한(checked) 체크박스의 value값들을 div태그중 아이디값이 area인 요소에
+            // 안쪽(innerHTML)에 출력.
+            let checkedList = document.querySelectorAll("input[type=checkbox]:checked");
+
+            let area = document.getElementById("area");
+            console.log(checkedList);
+
+            checkedList.forEach(function (item, index, array) {
+                area.innerHTML += item.value + " ";
+            })
+
+            // for(let i = 0; i<checkedList.length; i++){
+            //     area.innerHTML += checkedList[i].value + " ";
+            // }
+        }
+
+        // 2번기능
+        function selectAll() {
+            let checked = document.getElementById("selectAll").checked;
+
+            let categorys = document.getElementsByName('category');
+
+            for (let i = 0; i < categorys.length; i++) {
+                categorys[i].checked = checked;
+            }
+        }
+    </script>
 </body>
 
 </html>
