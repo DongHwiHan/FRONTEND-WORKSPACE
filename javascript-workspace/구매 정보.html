@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매 정보</title>
+    <style>
+        .area {
+            border: 1px solid black;
+            width: 400px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>구매정보</legend>
+        <ul>
+            <li>구매자 : <input type="text" id="name" placeholder="구매자의 이름을 입력하세요" required> </li> <br>
+            <li>상품명 : <input type="text" id="product" placeholder="구매 상품 명을 입력하세요" required> </li><br>
+            <li>가격 : <input type="text" id="price" placeholder="구매 가격을 입력하세요" required> </li><br>
+            <li>구매 수량 : <input type="number" id="count" placeholder="최소 10" min="10" max="100" step="10"></li><br>
+            <li>납품 등급 : <input type="range" id="rank" name="score" min="1" max="9" step="2" value="1"></li><br>
+            <li>기타 사항 <textarea name="" id="etc" cols="30" rows="10"></textarea></li><br>
+        </ul>
+
+    </fieldset>
+    <br>
+    <button onclick="test();">입력 값 출력하기</button><br><br>
+    <div id="area1" class="area"></div>
+
+    <script>
+        function test() {
+            let name = document.getElementById("name").value;
+            let product = document.getElementById("product").value;
+            let price = document.getElementById("price").value;
+            let count = document.getElementById("count").value;
+            let rank = document.getElementById("rank").value;
+            let etc = document.getElementById("etc").value;
+
+            let area1 = document.getElementById("area1");
+            area1.innerHTML += "구매자 명 : " + name + "님<br>"
+                + "상품 명 : " + product + "<br>"
+                + "가격 : " + price + "만원<br>"
+                + "구매 수량 : " + count + "개<br>"
+                + "납품등급 : " + rank + "등급<br>"
+                + "기타사항 : " + etc;
+
+        }
+
+    </script>
+</body>
+
+</html>

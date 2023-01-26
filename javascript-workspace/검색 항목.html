@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 2</title>
+    <style>
+        fieldset {
+            width: 500px;
+            text-align: center;
+
+
+        }
+
+        div.box {
+            width: 510px;
+            height: 50px;
+            box-align: center middle;
+            margin-top: 20px;
+            padding: 10px;
+            display: none;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Practice 5</h1>
+    <fieldset>
+        <legend>검색할 항목을 선택하세요</legend>
+        <input type="radio" id="title" name="category" onclick="showDiv(this);">제목
+        <input type="radio" id="date" name="category" onclick="showDiv(this);">날짜
+        <input type="radio" id="name" name="category" onclick="showDiv(this);">작성자
+    </fieldset>
+
+    <div id="titleBox" class="box">검색할 제목을 입력하세요 :
+        <form method="post" action="">
+            <input type="search" name="title" size="50"> &nbsp;
+            <input type="submit" value="검색">
+        </form>
+    </div>
+    <div id="dateBox" class="box">검색할 날짜를 선택하세요 :
+        <form method="post" action="">
+            <input type="date" name="end" size="50"> -
+            <input type="text" placeholder="연도-월-일">
+            <input type="submit" value="검색">
+        </form>
+    </div>
+    <div id="nameBox" class="box">검색할 작성자 아이디를 입력하세요 :
+        <form method="post" action="">
+            <input type="search" name="name" size="50"> &nbsp;
+            <input type="submit" value="검색">
+        </form>
+    </div>
+
+    <script>
+        function showDiv(element) {
+            let tag = document.getElementsByClassName("box");
+
+            for (let i = 0; i < tag.length; i++) {
+                if (element.id + "Box" == tag[i].id)
+                    tag[i].style.display = "block";
+                else
+                    tag[i].style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
